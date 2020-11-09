@@ -8,12 +8,11 @@
   <title>Modulo admin</title>
 </head>
 <body>
-  Anthony
+  @include('dashboard.partials.nav-header-main')
   <div class="container mt-5">
+    @include('dashboard.partials.session-flash-status')
     @yield('content')
   </div>
-
-
   <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

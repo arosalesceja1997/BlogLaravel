@@ -16,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+      $posts = Posts::orderBy('created_at','DESC')->paginate(5);
+      return view('dashboard.post.index', ['posts' => $posts]);
     }
 
     /**
@@ -38,7 +39,8 @@ class PostController extends Controller
     public function store(StorePostPost $request)
     {
       $post = Posts::create($request->validated());
-      dd($post);
+      // dd($post);
+      return back()->with('status', 'Post added successfully');
     }
 
     /**
