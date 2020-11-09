@@ -36,7 +36,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostPost $request)
+    public function store(Request $request)
     {
       $post = Posts::create($request->validated());
       // dd($post);
